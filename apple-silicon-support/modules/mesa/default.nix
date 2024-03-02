@@ -18,9 +18,6 @@
     (lib.mkIf config.hardware.asahi.useExperimentalGPUDriver {
       # install the drivers
       hardware.opengl.package = config.hardware.asahi.pkgs.mesa-asahi-edge.drivers;
-
-      # required for in-kernel GPU driver
-      hardware.asahi.withRust = true;
     })
     (lib.mkIf (isMode "replace") {
       # replace the Mesa linked into system packages with the Asahi version
