@@ -81,16 +81,16 @@ let
     linuxKernel.manualConfig rec {
       inherit stdenv lib;
 
-      version = "6.14.8-asahi";
+      version = "6.15.6-asahi";
       modDirVersion = version;
-      extraMeta.branch = "6.14";
+      extraMeta.branch = "6.15";
 
       src = fetchFromGitHub {
         # tracking: https://github.com/AsahiLinux/linux/tree/asahi-wip (w/ fedora verification)
         owner = "AsahiLinux";
         repo = "linux";
-        rev = "asahi-6.14.8-1";
-        hash = "sha256-JrWVw1FiF9LYMiOPm0QI0bg/CrZAMSSVcs4AWNDIH3Q=";
+        rev = "4a030ab95f00146f0a0d768f3acd721b0a041660";
+        hash = "sha256-z8YZYoUoeD//dGYKk3FBeatRw/N4XVPY896Ivwh9kdk=";
       };
 
       kernelPatches = [
