@@ -18,15 +18,15 @@ let
       inherit stdenv lib;
 
       pname = "linux-asahi";
-      version = "6.17.12";
+      version = "6.18.2";
       modDirVersion = version;
-      extraMeta.branch = "6.17";
+      extraMeta.branch = "6.18";
 
       src = fetchFromGitHub {
         owner = "AsahiLinux";
         repo = "linux";
-        tag = "asahi-6.17.12-1";
-        hash = "sha256-6n29aN+381ROzO8AiEK9ji0GBaAd9d8TSzI6bVf+Lqw=";
+        rev = "21a493172ce13c95df12b42faddfca515388d80c";
+        hash = "sha256-UCQs+VYIWZMYiizkLWdPjSipBuOB1ahZx2oy5VuEjPI=";
       };
 
       kernelPatches = [
@@ -42,6 +42,13 @@ let
 
             # Might lead to the machine rebooting if not loaded soon enough
             APPLE_WATCHDOG = yes;
+
+            APPLE_MAILBOX = yes;
+
+            APPLE_RTKIT = yes;
+            APPLE_RTKIT_HELPER = yes;
+            RUST_APPLE_RTKIT = yes;
+            RUST_FW_LOADER_ABSTRACTIONS = yes;
 
             # Can not be built as a module, defaults to no
             APPLE_M1_CPU_PMU = yes;
