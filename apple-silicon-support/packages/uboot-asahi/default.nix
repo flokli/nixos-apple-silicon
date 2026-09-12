@@ -9,10 +9,10 @@
   src = fetchFromGitHub {
     owner = "AsahiLinux";
     repo = "u-boot";
-    rev = "asahi-v2026.04-2";
-    hash = "sha256-DbXS8L3j5w8ryYknR+DnAonAdPMNNLaBwWyc27vK0r4=";
+    rev = "asahi-v2026.07-2";
+    hash = "sha256-9E79VceZcPw55zj6BBwgIBP/2OrHRS/w3ypGyOWfE6U=";
   };
-  version = "2026.04-2-asahi";
+  version = "2026.07-2-asahi";
 
   defconfig = "apple_m1_defconfig";
   extraMeta.platforms = [ "aarch64-linux" ];
